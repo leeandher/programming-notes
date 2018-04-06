@@ -15,6 +15,9 @@ To render JSX we declared earlier, we call the `ReactDOM.render()` function, whe
 //ReactDOM.render( JSX, location );
 ReactDOM.render( test, document.querySelector('body') );
 ```
+### Virtual DOM
+'Rendering' JSX is React's way of saying that it's compiling the JSX and applying it to the Document Object Model (DOM).
+The reason why React is so widely used is because of how effective and efficient it is at updating the DOM. Usually, when JavaScript makes changes to the DOM, it has to rebuild the entire model, even though maybe only one element is being changed. The Virtual DOM is a representation of the DOM, which isn't visible to any user. React notes the changes that come from a `ReactDOM.render()` call, and updates the Virtual DOM. The Virtual DOM is then compared to the actual DOM (this is called _diffing_) and __only changes the necessary specific objects on the real DOM__. Doing this avoids a lot of unnecessary DOM updating, and lets React run quicker and more efficiently.
 ### Declarations
 JSX uses variables, and constants to store HTML element information. Every element can also store attribute information as well.
 ```javascript
@@ -121,6 +124,3 @@ const menu = foods.map( (item, index) => <li key={food_ + index}>{item}</li> );
                           </ul>
  */
 ```
-### Virtual DOM
-'Rendering' JSX is React's way of saying that it's compiling the JSX and applying it to the Document Object Model (DOM).
-The reason why React is so widely used is because of how effective and efficient it is at updating the DOM. Usually, when JavaScript makes changes to the DOM, it has to rebuild the entire model, even though maybe only one element is being changed. The Virtual DOM is a representation of the DOM, which isn't visible to any user. React notes the changes that come from a `ReactDOM.render()` call, and updates the Virtual DOM. The Virtual DOM is then compared to the actual DOM (this is called _diffing_) and __only changes the necessary specific objects on the real DOM__. Doing this avoids a lot of unnecessary DOM updating, and lets React run quicker and more efficiently.
