@@ -117,10 +117,18 @@ const test = <p>My name is {returnName()}</p>;
 const foods = ['sandwich', 'pizza', 'salad'];
 const menu = foods.map( (item, index) => <li key={food_ + index}>{item}</li> );
  /*
-                          <ul> 
-                            <li key="food_0">sandwich</li>
- <ul>{menu}</ul>  -->       <li key="food_1">pizza</li> 
-                            <li key="food_2">salad</li>
-                          </ul>
+                       <ul> 
+                         <li key="food_0">sandwich</li>
+ <ul>{menu}</ul>  -->    <li key="food_1">pizza</li> 
+                         <li key="food_2">salad</li>
+                       </ul>
  */
 ```
+
+### Translation
+Whenever we use JSX, we are actually using the imported React object's method `createElement()`.
+```javascript
+//React.createElement(type, {prop: value}, [...children]);
+React.createElement(div, {id: 'main', className: 'circle'}, "My text"); // === <div id="main" class="circle>My text</div>
+```
+Generally when using JSX, we don't ever need to use this method, but it's an introduction to `React`'s methods.
