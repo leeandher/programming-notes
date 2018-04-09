@@ -109,9 +109,11 @@ class Navbar extends React.Component {
 class Header extends React.Component {
   render {
     return(
-      <h1>My Test Page</h1>
-      <Navbar />
-      <h3>My Page Head</h3>
+      <div className="wrapper>
+        <h1>My Test Page</h1>
+        <Navbar />
+        <h3>My Page Head</h3>
+      </div>
     );
   }
 }
@@ -149,9 +151,11 @@ import {NavItem} from '../nav.js';
 class Header extends React.Component {
   render {
     return(
-      <h1>My Test Page</h1>
-      <Navbar />
-      <h3>My Page Head</h3>
+      <div className="wrapper>
+        <h1>My Test Page</h1>
+        <Navbar />
+        <h3>My Page Head</h3>
+      </div>
     );
   }
 }
