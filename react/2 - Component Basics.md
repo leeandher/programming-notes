@@ -1,7 +1,24 @@
 ## Component Basics
 
+### Types of Components
+React components are dedicated sections of code that usually has one responsibility, and renders a chunk of HTML into the DOM. There are two basic types of components, __Functional Components__ and __Class-based components__. The difference between the two depends on the _state_ and the _usage_ of the created component. _Component States_ are covered more in depth in the next note, but for now lets see how they're declared.
+```javascript
+//Functional component declaration
+function NewComponent(props) {
+  return <div></div>
+}
+
+//Class-based component declaration
+class NewComponent extends React.Component {
+  render() {
+    return <div></div>;
+  }
+}
+```
+In terms of when to use which, in most cases, class-based components are the way to go, but if you have a static component which doesnt and won't ever have any state, or functions attached to it which need to be assessed outside of itself then it's clearer to use a functional component. Essentially a functional component is sufficient if your class-based component only contains a render method.
+
 ### Component Class
-React components are dedicated sections of code that usually has one responsibility, and renders a chunk of HTML. Every component that we render to the document  is part of a _component class_. As per convention, __component classes always start with a captial letter__.
+Every component that we render to the document  is part of a _component class_. As per convention, __component classes always start with a captial letter__.
 To create a 'Hello World' component, we'd use the following:
 ```javascript
 class TestComponentClass extends React.Component {
@@ -13,7 +30,7 @@ class TestComponentClass extends React.Component {
 ### Rendering Components
 In order to actually see the 'Hello World' component we previously created, we'd have to use the `ReactDOM.render()` function. To render an instance of our component, we call it similarly to an HTML tag, except it's crticial to note; __components must be self-closing (ex. `<TestComp />`)__.
 ```javascript
-//ReactDOM.render( our component , location );
+//ReactDOM.render( component , location );
 ReactDOM.render(
   <TestComponentClass />,
   document.getElementById('main')
