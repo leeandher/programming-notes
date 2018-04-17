@@ -16,20 +16,46 @@ class Example extends React.Component {
 Since our component `Example` is a subclass of `React.Component`, we call the `constructor` and the `super()` function to inherit properties and call the constructor of the parents. Inheritance and class based programming information can be found here: http://exploringjs.com/es6/ch_classes.html.
 
 ### Changing States
-A component doesn't only read it's own state, it can change it's state, using the function `this.setState()`. Take a look at this:
+A component doesn't only read it's own state, it can change it's state, using the function `this.setState()`. React changes states by _merging_ with the old state, preserving what it can. Take a look at this:
 ```javascript
 //Let's say this was the initial state
 {
-  mood:   'great',
+  mood: 'great',
   hungry: false
 }
 //We can change the initial states by the following
-this.setState( { hungry: true } );
+this.setState({ 
+  hungry: true,
+  status: "just ate"
+});
 //Now if we were to call the 'state' object...
 {
   mood: 'great',
-  hungry: true
+  hungry: true,
+  status: "just ate
 }
+```
+`this.setState()` can only accept objects, but does using ES6 arrow notation, we can also slip in some easy functions which would return objects. For example:
+```javascript
+//initial state 
+{
+amHungry: true,
+burgersEaten: 0
+}
+
+this.setState({
+  amHungry: false, 
+  burgersEaten: 2
+}); //this is hard-coded
+
+this.setState( (currentState) => (
+  currentState.burgersEaten ++;
+  return {
+    amHungry: Boolean(burgersEaten > 1),
+    burgersEaten: currentState.burgersEaten
+  };
+) ); //this is functional
+
 ```
 
 ### Changing States from Another Function
