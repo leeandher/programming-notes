@@ -40,6 +40,7 @@ export const defaultStyling = {
   padding: 15,
   color: 'dark blue'
 }
+
 // StyledComponent.js
 import React from 'react';
 import ReactDOM from 'react-dom';
