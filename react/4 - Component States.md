@@ -32,7 +32,7 @@ this.setState({
 {
   mood: 'great',
   hungry: true,
-  status: "just ate
+  status: "just ate"
 }
 ```
 `this.setState()` can only accept objects, but does using ES6 arrow notation, we can also slip in some easy functions which would return objects. For example:
