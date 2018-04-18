@@ -101,23 +101,3 @@ class Example extends React.Component {
 Let's explain this code. So in our `ExampleWrapper` component, we have two `Example` components with a bunch of children and `type` properties. In our `Example` component, we see that it generates a title based on the `type` property then creates an unordered list. Since all of the `children` of the `Example` components we have (contained in `ExampleWrapper`) are `li` tags the code renders an unordered list of those children. 
 
 If we did not have the unordered list, the `li` children would not be rendered. They are contained within the `Example` component, which didn't render them, so they will not display.
-
-
-### Default Props
-Sometimes, we'd like to have certain properties be the default unless specified by the user. We do so by using the following: 
-```javascript
-class Example extends React.Component {
-  render() {
-    return <button>{this.props.msg}</button>
-  }
-}
-
-Example.defaultProps = {
-  msg: 'I am a button.';
-}
-
-/*
-  Rendering <Example /> will have a msg value of 'I am a button.'
-  Rendering <Example msg='' /> will have a msg value of ''
-*/
-```
