@@ -28,7 +28,7 @@ const SoftwareStatus = (props) => {
   return (
     <div>
       <h1>{props.program}</h1>
-      <h2>{props.isUpdated ? 'Uptodate ' + props.versionNumber : 'Requires Update}</h2>
+      <h2>{props.isUpdated ? 'Uptodate ' + props.versionNumber : 'Requires Update'}</h2>
       <img src={props.thumbnail} alt={props.program + ' thumbnail'}>
     </div>
   );
@@ -52,3 +52,36 @@ Taking a look at the `propTypes` object, we can see we put requirements on every
 //VALID
 <SoftwareStatus program="Atom.exe" isUpdated={false} thumbnail="img/atom.jpeg"/>
 ```
+
+### Component Control
+Any given component can be considered a _controlled_ component, or an _uncontrolled_ component. __In a quick explanation, A controlled component does not maintain aninternal state, while a uncontrolled component does__. In other words, an uncontrolled component is _uncontrollable_ and vice versa. 99% of the time, components are controlled, because React works best with these. Let's take a look at an example:
+```js
+import React from 'react';
+import ReactDOM from 'react-dom';
+
+class Display extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = { userInput: '' };
+    this.handleUserInput = this.handleUserInput.bind(this);
+  }
+  handleUserInput(e) {
+    this.setState({
+      userInput = e.target.value;
+    });
+  }
+  render() {
+    return(
+      <div>
+        <input type="text" onChange={this.handleUserInput} value={this.state.userInput}/>
+        <h1>This is your input: {this.state.userInput}</h1>
+      </div>
+    );
+  }
+}
+
+ReactDOM.render(<Display />, document.getElementById('app'));
+```
+For a quick TL;DR of this code, we type `x` into `<input />`, `<Display />`'s state `userInput` is set to `x`, it renders `this.state.userInput`. Simple enough.
+
+But actually theres something going on behind the scene. `<input />` is normally an _uncontrolled_ component. This is because if we ever query for input's value (ex. `document.querySelector('input[type="text"]').value`), we would get it's value without having to consult `<Display />`'s state. By forcing the prop `value={this.state.userInput}` onto the `<input />` tag, we convert it to a _controlled_ element!
