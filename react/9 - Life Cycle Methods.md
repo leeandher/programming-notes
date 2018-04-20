@@ -22,3 +22,13 @@ These methods are invoked during the updating process (or re-rendering) of the g
  ### Unmounting LCMs
  There's only one method here, and it's invoked during the _unmounting_ process. Simply stated, this is just __when the component is being removed from the DOM__, AKA the opposite of mounting.
  - __componentWillUnmount()__ : Called just before a component has been removed/_unmounted_
+
+### Example
+
+```js
+class App extends React.Component {
+  constructor(props) {
+    
+  }
+}
+```
