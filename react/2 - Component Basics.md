@@ -15,10 +15,10 @@ class NewComponent extends React.Component {
   }
 }
 ```
-In terms of when to use which, in most cases, class-based components are the way to go, but if you have a static component which doesnt and won't ever have any state, or functions attached to it which need to be assessed outside of itself then it's clearer to use a functional component. Essentially, a functional component is sufficient if your class-based component only contains a render method.
+In terms of when to use which, in most cases, class-based components are the way to go, but if you have a static component which doesn't and won't ever have any state, or functions attached to it which need to be assessed outside of itself then it's clearer to use a functional component. Essentially, a functional component is sufficient if your class-based component only contains a render method.
 
 ### Component Class
-Every component that we render to the document  is part of a _component class_. As per convention, __component classes always start with a captial letter__.
+Every component that we render to the document  is part of a _component class_. As per convention, __component classes always start with a capital letter__.
 To create a 'Hello World' component, we'd use the following:
 ```javascript
 class TestComponentClass extends React.Component {
@@ -60,7 +60,6 @@ const user = {
   bio: 'test profile description',
   avatar: 'img/tester-avatar.png'
 };
-
 class TestComponentClass extends React.Component {
   render() {
     return(
@@ -89,7 +88,7 @@ class TestComponentClass extends React.Component {
 class TestComponentClass extends React.Component {
   //favColour 'getter' method
   get favColour() { return 'orange'; }
-  
+
   render() {
     return <h1>The favourite colour is {this.favColour}!</h1>
   }
@@ -107,7 +106,7 @@ class TestComponentClass extends React.Component {
 ```
 
 ### Crossing Components
-Components look lik self-closing HTML tags because they can be used as such. They are compatible in JSX which allows you to create components which create instances of other components. Take this for example: 
+Components look like self-closing HTML tags because they can be used as such. They are compatible in JSX which allows you to create components which create instances of other components. Take this for example:
 ```javascript
 class Navbar extends React.Component {
   render {

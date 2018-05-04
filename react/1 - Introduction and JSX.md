@@ -1,8 +1,8 @@
 ## JSX
 
-JSX stands for JavaScript and XML which is a syntax exension to produce elements in React. JSX looks nearly identical to normmal HTML with a few minor exceptions.
+JSX stands for JavaScript and XML which is a syntax extension to produce elements in React. JSX looks nearly identical to normal HTML with a few minor exceptions.
 ### Importing React
-Before starting with JSX, we must first source and import the clibraries correctly. After properly sourcing react with the script tags, `React` and `ReactDOM` must be imported for practical use.
+Before starting with JSX, we must first source and import the libraries correctly. After properly sourcing react with the script tags, `React` and `ReactDOM` must be imported for practical use.
 
 ```javascript
 import React from 'react';
@@ -23,7 +23,7 @@ JSX uses variables, and constants to store HTML element information. Every eleme
 ```javascript
 const test = <h1 className="main" id="my-title">Hello World!</h1>;
 ```
-    
+
 JSX declarations can only contain a single outer element, but does allow for nesting, so declaration can extend across lines with the following syntax:
 ```javascript
 const test = (
@@ -35,11 +35,11 @@ const test = (
 ```
 ### JSX-Specific Rules
  - __Self-closing Tags__
- 
+
 JSX requires closed self-closing tags. `<br>` is not valid, `<br />` is the only valid option.
 
  - __class vs. className__
- 
+
 JSX uses `className` as an attribute for element classes, since `class` is a reserved word in JS.
 ### Inserting JS
 
@@ -54,11 +54,11 @@ function returnName() {
 const test = <p>My name is {returnName()}</p>;
 ```
  - __if Statements__
- 
- JSX does not compile if statemnts in line. Instead, alternate declarations of the JSX expression.
+
+ JSX does not compile if statements in line. Instead, alternate declarations of the JSX expression.
  ```javascript
  var num = 2;
- 
+
  const test = (
    <h1>Hello {
    if (num < 2) {
@@ -71,7 +71,7 @@ const test = <p>My name is {returnName()}</p>;
  ```
  ```javascript
  var num = 2;
- 
+
  if (num < 2) {
    myText = 'Friend';
  } else {
@@ -80,35 +80,35 @@ const test = <p>My name is {returnName()}</p>;
  const test = <h1>Hello { myText }!</h1>; //This will compile
  ```
  - __Ternary Operator__
- 
+
  Rather than use if/else statements, ternary operators do work inline, and provide an easy alternative.
  ```javascript
  var num = 2;
  const test = <h1>Hello { num < 2 ? 'Friend' : 'World' }!</h1>;
  ```
  - __&& Operator__
- 
+
  The && operator is a little different from the logical AND operator. Functionally, it is a ternary operator without an alternative.
  ```javascript
  var isHungry = true;
  const test = <h1>I'm alive! {isHungry && 'And I'm hungry!'}</h1>;
  ```
  - __Array.map() Usage__
- 
+
  The Array.map() method can be used to create JSX looped through arrays as well. Each item can be converted to JSX and used to easily populate lists.
  ```javascript
  const nav = ['Home', 'Products', 'Contact'];
  const navList = nav.map(item => <li>{item}</li>);
  /*
-                          <ul> 
+                          <ul>
                             <li>Home</li>
- <ul>{navList}</ul>  -->    <li>Products</li> 
+ <ul>{navList}</ul>  -->    <li>Products</li>
                             <li>Contact</li>
                           </ul>
  */
  ```
  - __Keys__
- 
+
  When creating lists with React/JSX, each item should contain a key attribute if:
   1. The item must remember a state/change (ex. item being ticked or not)
   2. The item may shuffle location from instance to instance (ex. search results that aren't always in the same order)
@@ -117,9 +117,9 @@ const test = <p>My name is {returnName()}</p>;
 const foods = ['sandwich', 'pizza', 'salad'];
 const menu = foods.map( (item, index) => <li key={food_ + index}>{item}</li> );
  /*
-                       <ul> 
+                       <ul>
                          <li key="food_0">sandwich</li>
- <ul>{menu}</ul>  -->    <li key="food_1">pizza</li> 
+ <ul>{menu}</ul>  -->    <li key="food_1">pizza</li>
                          <li key="food_2">salad</li>
                        </ul>
  */
