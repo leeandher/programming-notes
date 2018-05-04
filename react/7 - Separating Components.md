@@ -1,5 +1,5 @@
 ## Separating Components
-It's very easy for a React component to get complicated and overcrowded. It may contain a constructor, along with many functions, variables and logic, all while rendering JSX as well. That is why React programmers generally follow a convention: If a component already has logic, functions, a state and decision-making, it shouldn't _also_ have to render JSX. This is how we seperate complex components into __Presentational__ and __Container__ components.
+It's very easy for a React component to get complicated and overcrowded. It may contain a constructor, along with many functions, variables and logic, all while rendering JSX as well. That is why React programmers generally follow a convention: If a component already has logic, functions, a state and decision-making, it shouldn't _also_ have to render JSX. This is how we separate complex components into __Presentational__ and __Container__ components.
 
 ### Container Components
 Even though the name suggests a simple wrapper, these components contain most of logic when it comes to the app. They will usually contain a state, a function set, a constructor method and maybe even some variables/constants. They _do_ contain a `render()` method, but not a complex one, usually only rendering one other component instance. Here's an example.
@@ -15,7 +15,7 @@ class Container extends React.Component {
 Since these components contain all the logic that goes into a program, they will be the components which are rendered to the DOM, meaning __you can find them inside the ReactDOM.render() method__.
 
 ### Presentational Components
-_Presentational_ components are the components which render the JSX, usually contained within the larger _container_ components. Recall that to _render_ JSX, does not always mean to display on the DOM, and actually for presentational components it means the opposite. These will be rendered into the parent component, so if contained on a seperate file, __they will not contain the following:__
+_Presentational_ components are the components which render the JSX, usually contained within the larger _container_ components. Recall that to _render_ JSX, does not always mean to display on the DOM, and actually for presentational components it means the opposite. These will be rendered into the parent component, so if contained on a separate file, __they will not contain the following:__
 ```js
 import ReactDOM from 'react-dom';
 ReactDOM.render( ... );

@@ -4,7 +4,7 @@
 Props is short for _properties_ and refers to the specific named values passed when creating an instance of a component. That is a complicated statement to process but it really isn't terrible difficult to understand. See this example:
 ```javascript
 var exampleAge = 45;
-ReactDOM.render( 
+ReactDOM.render(
   <ExampleComponent message="This is top secret!" towns={["Mississauga", "Kanata"]} age={exampleAge} isLeaked={false} />,
   document.getElementById('main')
 );
@@ -13,7 +13,7 @@ We've passed a bunch of information to the component on render, but we need to h
 ```javascript
 class ExampleComponent extends React.Component {
   render() {
-    
+
     console.log( JSON.stringify(this.props);
     /*
    'message' : 'This is top secret!',
@@ -21,7 +21,7 @@ class ExampleComponent extends React.Component {
    'age' : 45,
    'isLeaked': false
     */
-    
+
     return(
       <div className="wrapper">
         <h1>{this.props.message}</h1>
@@ -67,7 +67,7 @@ This may seem confusing at first but if we trace what's going on, it's not too b
 When we render an `<Exploder />` component, we create a `<CustomButton />` instance with the property `onClick` set to our function (`handleClick`). When we click on the `<CustomButton />`  we are clicking on the actual `<button>` element rendered within it, and that element has an Event Listener for `onClick` set to read `<CustomButton />`'s property of `onClick`!
 
 ### Children
-The `props` object also has access to the children of an instance of a component. Up until now components have always been self closing, but that isn't mandatory, just usual. If a component isn't self closing (`<Example />` vs. `<Example></Example>`), it's children can be accessed using `this.props.children`. It is an array of JSX entitites.
+The `props` object also has access to the children of an instance of a component. Up until now components have always been self closing, but that isn't mandatory, just usual. If a component isn't self closing (`<Example />` vs. `<Example></Example>`), it's children can be accessed using `this.props.children`. It is an array of JSX entities.
 ```javascript
 class ExampleWrapper extends React.Component {
   render() {
@@ -87,7 +87,7 @@ class ExampleWrapper extends React.Component {
   }
 }
 
-class Example extends React.Component { 
+class Example extends React.Component {
   render() {
     return (
       <div>
@@ -98,6 +98,6 @@ class Example extends React.Component {
   }
 }
 ```
-Let's explain this code. So in our `ExampleWrapper` component, we have two `Example` components with a bunch of children and `type` properties. In our `Example` component, we see that it generates a title based on the `type` property then creates an unordered list. Since all of the `children` of the `Example` components we have (contained in `ExampleWrapper`) are `li` tags the code renders an unordered list of those children. 
+Let's explain this code. So in our `ExampleWrapper` component, we have two `Example` components with a bunch of children and `type` properties. In our `Example` component, we see that it generates a title based on the `type` property then creates an unordered list. Since all of the `children` of the `Example` components we have (contained in `ExampleWrapper`) are `li` tags the code renders an unordered list of those children.
 
 If we did not have the unordered list, the `li` children would not be rendered. They are contained within the `Example` component, which didn't render them, so they will not display.

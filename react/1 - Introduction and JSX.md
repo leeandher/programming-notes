@@ -53,6 +53,7 @@ function returnName() {
 }
 const test = <p>My name is {returnName()}</p>;
 ```
+
  - __if Statements__
 
  JSX does not compile if statements in line. Instead, alternate declarations of the JSX expression.

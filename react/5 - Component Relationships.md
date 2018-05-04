@@ -1,7 +1,7 @@
 ## Component Relationship Patterns
 
-### Distinguishing State and Props 
-Before moving forward into more complex React, we need to understand the distinguishing feature between `state` and `props`. They are both methods for giving data to a component but are not interchangable, they key seperator being: __states contain _dynamic_ information, while props are _passed static_ information__. 
+### Distinguishing State and Props
+Before moving forward into more complex React, we need to understand the distinguishing feature between `state` and `props`. They are both methods for giving data to a component but are not interchangeable, they key separator being: __states contain _dynamic_ information, while props are _passed static_ information__.
 
 That is, `this.state` can change it's value:
 ```javascript
@@ -25,7 +25,7 @@ render() { return <h1>{this.props.message}</h1> } //"first message"
 ```
 Properties are only passed onto component and should not be generated or changed for any reason. If part of a component needs to change, the solution isn't to figure out how to change the `props`, but to convert to a system which leverages `state` instead.
 
-This gets confusing when you think of this next example. Imagine building a list of online/offline friends. To do so in React, we'd make a parent component with `state` of both 'online' and 'offline' friends. Then we simply pass the `states` to two seperate list components as properties. Check this out: 
+This gets confusing when you think of this next example. Imagine building a list of online/offline friends. To do so in React, we'd make a parent component with `state` of both 'online' and 'offline' friends. Then we simply pass the `states` to two separate list components as properties. Check this out:
 ```javascript
 function OnlineFriendsList(props) {
   const onlineFriends = props.list.map(friend => <li>{friend}</li>);
@@ -34,7 +34,7 @@ function OnlineFriendsList(props) {
       <h1>Online</h1>
       <ul>{onlineFriends}</ul>
     </div>
-  ); 
+  );
 }
 function OfflineFriendsList(props) {
   const offlineFriends = props.list.map(friend => <li>{friend}</li>);
@@ -43,7 +43,7 @@ function OfflineFriendsList(props) {
       <h1>Offline</h1>
       <ul>{offlineFriends}</ul>
     </div>
-  ); 
+  );
 }
 class FriendsList extends React.CreateElement {
   constructor(props) {
@@ -66,9 +66,9 @@ class FriendsList extends React.CreateElement {
 At first glance, when someone goes online, it's easy to think that the props are changing, but in reality they're not. What we're doing here is passing the parent `state down to the children as `props`, which they interpret as lists. If a friend goes offline, `setState` is invoked somewhere, changing the arrays and on the next render, the output is changed, but we never directly modify the `props`. In reality we are using new `props`, because our `state` has changed!
 
 ### Stateless and Stateful Components
-There are many ways of categorizing components, one of which being by state. Components are either deemed stateful or stateless depending on whether or not they contain a state object (i.e. possess information). 
+There are many ways of categorizing components, one of which being by state. Components are either deemed stateful or stateless depending on whether or not they contain a state object (i.e. possess information).
 
-Using the previous example, we can see that the `OnlineFriendsList` and `OfflineFriendsList` components are stateless because they just interpret information (create lists and display) but don't posess it (not `state` object). Meanwhile, the `FriendsList` component interprets (passes information to children) and possesses it (holds online/offline friend arrays in `state` object).
+Using the previous example, we can see that the `OnlineFriendsList` and `OfflineFriendsList` components are stateless because they just interpret information (create lists and display) but don't possess it (not `state` object). Meanwhile, the `FriendsList` component interprets (passes information to children) and possesses it (holds online/offline friend arrays in `state` object).
 
 ### Child/Parent Relationship Pattern
 Even in complex applications, the most low-level components (no children) are usually stateless, and purely functional. Usually however, they are things like buttons, displays, and alerts, so they are usually catching user events. In these cases, the component uses an event handler to complete a function on the event. Take a look:

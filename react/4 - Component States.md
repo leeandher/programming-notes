@@ -24,7 +24,7 @@ A component doesn't only read it's own state, it can change it's state, using th
   hungry: false
 }
 //We can change the initial states by the following
-this.setState({ 
+this.setState({
   hungry: true,
   status: "just ate"
 });
@@ -37,14 +37,14 @@ this.setState({
 ```
 `this.setState()` can only accept objects, but does using ES6 arrow notation, we can also slip in some easy functions which would return objects. For example:
 ```javascript
-//initial state 
+//initial state
 {
 amHungry: true,
 burgersEaten: 0
 }
 
 this.setState({
-  amHungry: false, 
+  amHungry: false,
   burgersEaten: 2
 }); //this is hard-coded
 
@@ -67,7 +67,7 @@ In order to allow a function to change the state of a component instance, we fir
     this.function = this.function.bind(this); //Now the function will only operate on this instance
   }
 ```
-If we invoke a state change, it needs to be done in a seperate function for clarity. Take a look:
+If we invoke a state change, it needs to be done in a separate function for clarity. Take a look:
 ```javascript
 class Toggle extends React.Component {
   constructor(props) {
@@ -81,7 +81,7 @@ class Toggle extends React.Component {
   render() {
     return (
       <button
-        style={{background: this.state.color}} 
+        style={{background: this.state.color}}
         onClick={this.changeColor}>
         Change Color
       </button>
