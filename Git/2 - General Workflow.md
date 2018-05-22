@@ -1,3 +1,5 @@
+# W.I.P. NOTE
+
 ## Git Design
 
 ### Understanding the Workflow
@@ -8,19 +10,21 @@ Git uses three areas in tandem to track, prepare and backup your files with a fu
  - __Staging Area__
  - __Commit__
 
-##### TEMP NOTES TO FORMALIZE
+
+
+##### _NOTES TO FORMALIZE_
 working -> staging -> commit
-git init
-- start a repository.
-git status
-- see all tracked/untracked files
-git add
+- git init
+ - start a repository.
+- git status
+ - see all tracked/untracked files
+- git add
  - stage a file
-git diff
+- git diff
  - compare working files to previous versions
-git commit
-- create a commit
-git log
+- git commit
+ - create a commit
+- git log
  - show complete commit history to this branch
-git show HEAD
-- show log changes for current commit, as well as diff
+- git show HEAD
+ - show log changes for current commit, as well as diff
