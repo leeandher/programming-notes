@@ -23,3 +23,5 @@ EXPOSE 8080                         # specify port to expose on container
 
 # Other commands: CMD, ENV. ADD, USER, ENTRYPOINT, ONBUILD
 ```
+
+Another important concept that may be important for your Docker use case is the ability to persist data. In the above `Dockerfile`, the `VOLUME` command does just that. It specifies the host storage file system mounted to the container so that data can be persisted even if the container isn't running.
