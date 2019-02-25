@@ -30,18 +30,26 @@ Running code in a container ensures that the run-time environment is the same re
 
 ### Resource Efficacy
 
-It may kinda sound like a virtual machine at this point, but it's way different. A virtual machine has the entire operating system running alongside the single packaged software, which increases disk space into the gigabytes, even if your software and its dependencies are much smaller. It also increases the boot time, and memory consumption because OS's are likely more intense than your software.
+It may kinda sound like a virtual machine at this point, but it's way different. A virtual machine has the entire operating system running alongside the single packaged software, which increases disk space into the gigabytes, even if your software and its dependencies are much smaller. It also increases the boot time, and memory consumption because OS's are likely more intense than your software. Specifically, the **_kernel_**, being contained each time is the most intensive part of running VMs.
 
-A docker container has a host OS on the machine, and instead, your container isolate your software to only use the part it requires, essentially, sharing the OS. The isolation reduces your disk usage by simply cutting out the need for an OS per enviroment, saving you on memory, boot time, and ease!
+The _kernel_ is the central component of most operating systems, bridging the gap between applications and the actual data processing done at the hardware level. It is pretty much the interface between hardware and software components.
+
+A docker container has a host OS on the machine, and instead, your container isolate your software to only use the part it requires, essentially, sharing the OS. The isolation reduces your disk usage by simply cutting out the need for an OS kernel per enviroment, saving you on memory, boot time, and ease!
 
 ### Adapting to Scale
 
-Since you don't have an OS tied to your application, the ease of scale is definitely better than a VM. If your instances are under load for any reason, all you would need to do is _expand sideways_, spinning up more containers to run your software, which could definitely share the same OS and disk. This ability to scale is also much much faster, due to the previously mentionned resource bonuses.
+Since you don't have an OS kernel tied to your application, the ease of scale is definitely better than a VM. If your instances are under load for any reason, all you would need to do is _expand sideways_, spinning up more containers to run your software, which could definitely share the same OS and disk. This ability to scale is also much much faster, due to the previously mentionned resource bonuses.
 
 ### Better Modularity
 
 Due to the ease of spinning containers up and down, you can easily split up your application based on the seperate processes to fit best practice. Keeping all of your ducks in a line will make it easier to debug and scale, since you won't have to worry about affecting any of the other containers.
 
-For example, if you had **Redis**, **Node.js**, and **Postgres** process all running all at once for your application, you would want to run them on the same VM to save on resource consumption since each would require their own OS otherwise. Now it can get messy, since they're all tangled and can break one another.
+For example, if you had **Redis**, **Node.js**, and **Postgres** process all running all at once for your application, you would want to run them on the same VM to save on resource consumption since each would require their own OS kernel otherwise. Now it can get messy, since they're all tangled and can break one another.
 
 Instead, Docker recommends running them in _seperate_ containers, that way, you know what breaks and when, how it affected the other containers (if at all), and shared OS/resources between the operations! **_All three processes can run side-by-side, instead of on top of each other!_**
+
+### It Just Works
+
+It makes it easier to get started working with someone else's projects since none of the tools or dependecies or versioning errors come along for the ride when you decide to tinker with code you haven't authored.
+
+Docker by no means invented the concept of containerized code, but is just a helpful tool with a widespread ecosystem of resources to reduce the overhead from creating and maintaining these containers.
