@@ -2,6 +2,14 @@
 
 To whoever is reading this, trying to spin up a Minecraft server in 2019 without paying for _Minecraft Realms_, I respect that. My girlfriend recently saw some GIFs or something and wants to start up a server for us to play together, plus I think this could be a fun Saturday experiment. I'm going to talk a little bit about my process in getting this up and running. I'm definitely not used to SSHing into Linux servers but we'll give it a shot.
 
+Note: This tutorial is not very verbose and has some strict limitations along with it. It's really only useful if the following are true:
+
+- Small server size (~2-10 people)
+- Private (host knows/trusts all players)
+- Minecraft for Java (Incompatible with Minecraft PE and Minecraft Windows 10)
+- Fast internet (the host has a speedy connection)
+- Old Laptop (or a strong laptop that can play/run the server concurrently)
+
 ---
 
 ## Step 1: Hosting
@@ -28,4 +36,14 @@ Note: This is definitely the most insecure option of the three, since you're exp
 
 ---
 
-## Step 2: Download Javas
+## Step 2: Download Java
+
+First thing's first, you need the latest version of Java, which you can find [over here](https://java.com/en/download/). Simply download and install. Once the dialog pops up confirming your installation, you should be good to go to the next step!
+
+## Step 3: Download the Server
+
+Minecraft has a server file that you will be using on the host machine to spin up the server. You can download the latest one from the official page [over here](https://minecraft.net/en-us/download/server/).
+
+## Step 4: Setup the Machine
+
+You can keep your server files whereever you want, but I personally just opted for `C:\Users\name\Desktop\MC Server\`. Wherever you decide, place your `server.jar` file you just downloaded into that directory and open it up in your terminal of choice. If you don't have a custom one installed, just press the `WIN` key, and search for `cmd`. Opening up the program entitled `Command Prompt` will give you the default Windows terminal.
