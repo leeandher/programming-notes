@@ -1,4 +1,4 @@
-# Starting a Minecraft Server (March 2019)
+# Creating a Minecraft Server (March 2019)
 
 To whoever is reading this, trying to spin up a Minecraft server in 2019 without paying for _Minecraft Realms_, I respect that. My girlfriend recently saw some GIFs or something and wants to start up a server for us to play together, plus I think this could be a fun Saturday experiment. I'm going to talk a little bit about my process in getting this up and running. I'm definitely not used to SSHing into Linux servers but we'll give it a shot.
 
@@ -99,7 +99,7 @@ You'll get a printout looking sorta like this:
 
 Now we're good to move on!
 
-## Step 5: Eula
+## Step 5: EULA
 
 The reason the server stopped was because we hadn't yet signed the End User License Agreement (EULA). If you navigate to your server directory, you'll see a brand new file called `eula.txt` has been created. Open it up to edit in a text editor (but use `vi eula.txt` if you're a cool cat).
 
