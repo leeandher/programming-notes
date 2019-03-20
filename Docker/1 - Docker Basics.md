@@ -1,4 +1,4 @@
-# 1 - Dockerfile Basics
+# 1 - Docker Basics
 
 ## What is a Dockerfile
 
@@ -25,3 +25,40 @@ EXPOSE 8080                         # specify port to expose on container
 ```
 
 Another important concept that may be important for your Docker use case is the ability to persist data. In the above `Dockerfile`, the `VOLUME` command does just that. It specifies the host storage file system mounted to the container so that data can be persisted even if the container isn't running.
+
+For the most part, dockerfiles are straight forward, and the syntax can almost just be read and understood.
+
+## Command Line
+
+Docker comes with a helpful command line interface that can assist you in managing your containers. The [full docs](https://docs.docker.com/engine/reference/commandline/cli/) are pretty expansive, so there really is no need to talk about it. If ever you need it though, simply invoking the `docker` command will bring up some helpful usage docs as well:
+
+```shell
+$ docker
+
+Usage:	docker [OPTIONS] COMMAND
+
+A self-sufficient runtime for containers
+
+Options:
+      --config string      Location of client config files (default "/Users/leanderrodrigues/.docker")
+  -D, --debug              Enable debug mode
+  -H, --host list          Daemon socket(s) to connect to
+  -l, --log-level string   Set the logging level ("debug"|"info"|"warn"|"error"|"fatal") (default "info")
+  ...
+
+Management Commands:
+  builder     Manage builds
+  config      Manage Docker configs
+  container   Manage containers
+  image       Manage images
+  ...
+
+Commands:
+  attach      Attach local standard input, output, and error streams to a running container
+  build       Build an image from a Dockerfile
+  version     Show the Docker version information
+  wait        Block until one or more containers stop, then print their exit codes
+  ...
+
+Run 'docker COMMAND --help' for more information on a command.
+```
