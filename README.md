@@ -5,18 +5,22 @@ I seriously don't remember anything unless I write it down. This repository help
 ---
 
 ### Advanced React
+
 - `//TODO: Finish AdvancedReact.com course`
 
 ### Advice
+
 - Interview skills
 - Coding challenges
 - Verbalizing code
 - Explaining thought process
 
 ### Git
+
 - Basic conceptual overview
 
 ### How To GraphQL
+
 - What is GraphQL
 - Why choose GraphQL
 - How GraphQL works
@@ -24,6 +28,7 @@ I seriously don't remember anything unless I write it down. This repository help
 - Fetching data from a GraphQL endpoint
 
 ### Learn Node
+
 - Setup and Concepts (using Express)
 - Storage and Control Flow
 - Data Management with MongoDB
@@ -34,11 +39,13 @@ I seriously don't remember anything unless I write it down. This repository help
 - Pagination (Backend)
 
 ### Learn Redux
+
 - Definitions (Actions, Store, Dispatching, etc.)
 - Concepts (Pure Functions, Using Reducers, etc.)
 - Fundamentals (Joining Reducers, Mapping, Restrictions, etc.)
 
 ### React 101
+
 - What is React?
 - Intro to JSX
 - Intro to Props
@@ -47,7 +54,8 @@ I seriously don't remember anything unless I write it down. This repository help
 - Stateless vs. Stateful
 - Styling Components
 - Refactoring Components
-- Lifecycle Methods
+- LifeCycle Methods
 
 ### React For Beginners
+
 - Random Notes (Binding, Refs, ES6)

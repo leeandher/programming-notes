@@ -1,4 +1,4 @@
-## Schema Definition Langauge
+## Schema Definition Language
 
 One of the fundamental parts of any API structure is the method in which we define the schema. As outlined before, this is required to be set before either front-end or back-end teams start with their use-cases.
 
@@ -6,7 +6,7 @@ GraphQL APIs use a special syntax, named the _Schema Definition Language (SDL)_ 
 
 Here are some examples of type definitions within the SDL:
 
-```sdl
+```graphql
 type Person {
   name: String!
   age: Int!
@@ -20,7 +20,7 @@ type Post {
 }
 ```
 
-This would be how we would define the data retrieved by our API. Every `person` item has the `name`, `age`, and `posts` field attached, and they must be populated, since they have an **exclamation mark (!).** This is how we denote fields as mandatory. In this case, if the `Person` has not made a post yet, this requires that `Person.posts` atleast returns an empty array, or `[]`.
+This would be how we would define the data retrieved by our API. Every `person` item has the `name`, `age`, and `posts` field attached, and they must be populated, since they have an **exclamation mark (!).** This is how we denote fields as mandatory. In this case, if the `Person` has not made a post yet, this requires that `Person.posts` at least returns an empty array, or `[]`.
 
 Other than that, the types are fairly standard. We must define how our data looks (via `string`, or `int`) so that our database doesn't throw any errors,
 
