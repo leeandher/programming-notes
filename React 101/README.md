@@ -1,4 +1,8 @@
-# React 101
+**Please Note, these notes may be outdated as they were written for an older version of React**
+
+---
+
+# React 101 (Feb 2018)
 
 This is a collection of notes I compiled from the [React 101, Course, Parts I and II](https://www.codecademy.com/learn/react-101) offered by [Codecademy](codecademy.com)!
 

@@ -1,20 +1,20 @@
 ## React For Beginners
 
-_A compliation of useful notes and tricks that could come in handy in the future. Better to be safe than sorry!_
+_A compilation of useful notes and tricks that could come in handy in the future. Better to be safe than sorry!_
 
 ---
 
 Avoid binding process functions by instead declaring them as properties directly bound to the instance.
 
 ```javascript
-//Instead of this:
+// Instead of this:
 constructor() {
   super();
   this.doTheThing = this.doTheThing.bind(this)
 }
 function doTheThing(params) {..
 
-//Consider this:
+// Consider this:
 doTheThing = (params) => {...
 ```
 
@@ -22,13 +22,13 @@ doTheThing = (params) => {...
 
 In order to gather the data from from forms or input fields, react uses special properties known as _references_ or _refs_.
 
-To use a ref, simply delare it using the `createRef()`
+To use a ref, simply declare it using the `createRef()`
 
 ```javascript
 myInput = React.createRef();
 
 displayInput = () => console.log(this.myInput.value.value);
-//returns "this is an example"
+// returns "this is an example"
 
 render() {
   return (
