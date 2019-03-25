@@ -1,4 +1,4 @@
-# Docker
+# Docker (February 2019)
 
 This is a collection of notes I compiled from a bunch of different resources while I was trying to learn about _Docker_. They are all listed below!
 

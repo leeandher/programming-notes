@@ -1,4 +1,4 @@
-# Learn Node
+# Learn Node (November 2018)
 
 This is a collection of notes I compiled from the [Learn Node Course](https://learnnode.com) offered by [Wes Bos](wesbos.com/courses)!
 

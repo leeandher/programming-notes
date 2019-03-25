@@ -6,17 +6,17 @@ Version control is a system which records additions, deletions and changes to a 
 
 ### Types of Version Control Systems
 
- - __Local Version Control__
+- **Local Version Control**
 
- This is the most common type of version control for most people. If they have a project they're working on (code-related or not), just making another directory to store all the related files is a very simple solution. While it's organized, it is also very error prone by deleting or copying over necessary files.
+This is the most common type of version control for most people. If they have a project they're working on (code-related or not), just making another directory to store all the related files is a very simple solution. While it's organized, it is also very error prone by deleting or copying over necessary files.
 
- - __Centralized Version Control__
+- **Centralized Version Control**
 
- Centralized Version Control is largely used when collaborating with a team (especially for programming). Since team members may require access to shared data/files, using a centralized source server to contain and checkout all the working files is definitely viable. It may even allow for supervision of exactly which files/projects other team members are working on; however, the obvious risk is that entire project bases can easily be lost through server failure, weak security or physical damage.
+Centralized Version Control is largely used when collaborating with a team (especially for programming). Since team members may require access to shared data/files, using a centralized source server to contain and checkout all the working files is definitely viable. It may even allow for supervision of exactly which files/projects other team members are working on; however, the obvious risk is that entire project bases can easily be lost through server failure, weak security or physical damage.
 
- - __Distributed Version Control__
+- **Distributed Version Control**
 
- Distributed Version Control is considered the safest, and most dependable form of version control, especially when collaborating with a team. Every member of the team 'clones' or 'copies' the entire codebase and its full history, to makes changes locally or even offline. While convenient, this also lets each contributor serve as a reliable backup without any single location to depend on. Each user has their own control details as well, allowing changes to be tracked and conflicts to be reviewed before pushing any code into production, also known as 'branching' and 'merging'.
+Distributed Version Control is considered the safest, and most dependable form of version control, especially when collaborating with a team. Every member of the team 'clones' or 'copies' the entire codebase and its full history, to makes changes locally or even offline. While convenient, this also lets each contributor serve as a reliable backup without any single location to depend on. Each user has their own control details as well, allowing changes to be tracked and conflicts to be reviewed before pushing any code into production, also known as 'branching' and 'merging'.
 
 ### Why Git?
 

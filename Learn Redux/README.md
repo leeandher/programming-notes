@@ -1,4 +1,4 @@
-# Learn Redux
+# Learn Redux (November 2018)
 
 This is a collection of notes I compiled from the [Learn Redux Course](https://learnredux.com) offered by [Wes Bos](wesbos.com/courses)!
 
