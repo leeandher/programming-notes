@@ -1,6 +1,6 @@
 # Creating a Minecraft Server (March 2019)
 
-To whoever is reading this, trying to spin up a Minecraft server in 2019 without paying for _Minecraft Realms_, I respect that. My girlfriend recently saw some GIFs or something and wants to start up a server for us to play together, plus I think this could be a fun Saturday experiment. I'm going to talk a little bit about my process in getting this up and running. I'm definitely not used to SSHing into Linux servers but we'll give it a shot.
+To whoever is reading this, trying to spin up a Minecraft server in 2019 without paying for _Minecraft Realms_, I respect that. My girlfriend recently saw some GIFs or something and wants to start up a server for us to play together, plus I think this could be a fun Saturday experiment. I'm going to talk a little bit about my process in getting this up and running. I'm definitely not used to SSH-ing into Linux servers but we'll give it a shot.
 
 Note: This tutorial is not very verbose and has some strict limitations along with it. It's really only useful if the following are true:
 
@@ -16,21 +16,21 @@ While there are plenty of hosting options out there, I'm a pretty cheap guy, so 
 
 ### DigitalOcean
 
-For hosting a persistant Minecraft server, this is probably the best choice. By persistant, I mean without any downtime. You and your friends can login whenever you feel like and the server will always running, ready for you join. DigitalOcean is known for its relative ease of use, and cheap prices, so spinning one up in the cloud to run 24/7 is a great, cost-effective choice.
+For hosting a persistent Minecraft server, this is probably the best choice. By persistent, I mean without any downtime. You and your friends can login whenever you feel like and the server will always running, ready for you join. DigitalOcean is known for its relative ease of use, and cheap prices, so spinning one up in the cloud to run 24/7 is a great, cost-effective choice.
 
 Note: Droplets on DigitalOcean have no ROM, and therefore, if your service shuts down, you'll lose your server's data. There's definitely a way to copy the data to your local machine before that happens, but that's just another thing to keep in mind.
 
 ### Amazon Web Services
 
-Now we're getting into the nitty gritty. AWS is verbose and hosting/using any servers on their platforms is not very easy to get started with. You'll be reading the docs for a few hours before you really feel comfortable getting started, especially considering how easy it is to rack up large bills if you don't know what you're doing. Personally, I would say to choose AWS if you want a non-perstant, secure, cheap server and you're willing to put the time into it. That means having an EC2 instance in the cloud that you can SSH into and spin up your server before you play, and shut it down when you're done. Honestly, it might even be cheaper than DigitalOcean in some cases when runnning full time, but that's up to you.
+Now we're getting into the nitty gritty. AWS is verbose and hosting/using any servers on their platforms is not very easy to get started with. You'll be reading the docs for a few hours before you really feel comfortable getting started, especially considering how easy it is to rack up large bills if you don't know what you're doing. Personally, I would say to choose AWS if you want a non-persistent, secure, cheap server and you're willing to put the time into it. That means having an EC2 instance in the cloud that you can SSH into and spin up your server before you play, and shut it down when you're done. Honestly, it might even be cheaper than DigitalOcean in some cases when running full time, but that's up to you.
 
-Note: Similar to before, but with a server that isn't persistant, it's very easy for you to lose all your data since EC2 instances have no ROM to store anything. That means you'll have to ALSO have an S3 bucket to persist data between your gaming sessions, which is a whole other thing to set up. If you ever ditch the server, atleast that bucket will have its contents saved, but that'll cost ya! Probably not hard for an expert, but definitely a challenge for me to get started with, that's why I chose the cheapest alternative.
+Note: Similar to before, but with a server that isn't persistent, it's very easy for you to lose all your data since EC2 instances have no ROM to store anything. That means you'll have to ALSO have an S3 bucket to persist data between your gaming sessions, which is a whole other thing to set up. If you ever ditch the server, at least that bucket will have its contents saved, but that'll cost ya! Probably not hard for an expert, but definitely a challenge for me to get started with, that's why I chose the cheapest alternative.
 
 ### Host Machine
 
-If you don't plan on having too many people playing at once, and you know/trust them all, it might be a good idea to dust off that old laptop that sits in the corner of your room. Paying for secure anonynmous server space is great, but so is not having to pay \$5.00 a month to play a game you already have with a bunch of friends. You can even run the server on the same machine you'll be using to play, but running any machine 24/7 will affect it's lifespan and future performance, so for full-time servers I recommend using seperate hardware.
+If you don't plan on having too many people playing at once, and you know/trust them all, it might be a good idea to dust off that old laptop that sits in the corner of your room. Paying for secure anonymous server space is great, but so is not having to pay \$5.00 a month to play a game you already have with a bunch of friends. You can even run the server on the same machine you'll be using to play, but running any machine 24/7 will affect it's lifespan and future performance, so for full-time servers I recommend using separate hardware.
 
-So going forward in this doc, I'm going to help along with how you can set up a seperate machine to boot up a public minecraft server to be accessed over the internet (or LAN if that's your thing.)
+So going forward in this doc, I'm going to help along with how you can set up a separate machine to boot up a public minecraft server to be accessed over the internet (or LAN if that's your thing.)
 
 Note: This is definitely the most insecure option of the three, since you're exposing your local network, and host IP to the public. It's not recommended for public Minecraft servers, but since it's just me and a couple of friends, this is the option I'm going to go with.
 
@@ -44,7 +44,7 @@ Minecraft has a server file that you will be using on the host machine to spin u
 
 ## Step 4: Setup the Machine
 
-You can keep your server files whereever you want, but I personally just opted for `C:\Users\name\Desktop\MC Server\`. Wherever you decide, place your `server.jar` file you just downloaded into that directory and open it up in your terminal of choice.
+You can keep your server files where ever you want, but I personally just opted for `C:\Users\name\Desktop\MC Server\`. Wherever you decide, place your `server.jar` file you just downloaded into that directory and open it up in your terminal of choice.
 
 Now before we run it, take a look at the following command:
 
@@ -52,7 +52,7 @@ Now before we run it, take a look at the following command:
 java -Xmx1024M -Xms1024M -jar server.jar nogui
 ```
 
-In this, were telling Java to sorta _unzip_ the file without a [GUI](https://en.wikipedia.org/wiki/Graphical_user_interface) (`nogui`), allocating initial pool of **1024 Mbs** of memory (`-Xms`) and to use no more than **1024** Mbs (`-Xmx`). Since I don't know what kind of old computer you have, you can change those alloactions as you want.
+In this, were telling Java to sorta _unzip_ the file without a [GUI](https://en.wikipedia.org/wiki/Graphical_user_interface) (`nogui`), allocating initial pool of **1024 Mbs** of memory (`-Xms`) and to use no more than **1024** Mbs (`-Xmx`). Since I don't know what kind of old computer you have, you can change those allocations as you want.
 
 First, make sure your installation of Java went smoothly by running the following command:
 
@@ -119,7 +119,7 @@ Now you can go back and run the start command same as before to bring up your se
 
 ### Connecting from the Same Computer
 
-If you're connecting on the same computer, all you have to do is bootup Minecraft, and `Direct Connect` to the renowned Home IP Address: `127.0.0.1`. Enjoy!
+If you're connecting on the same computer, all you have to do is boot up Minecraft, and `Direct Connect` to the renowned Home IP Address: `127.0.0.1`. Enjoy!
 
 ### Connecting from the Same Network
 
@@ -136,7 +136,7 @@ The **IPv4 Address** is the one you're going to want to `Direct Connect` to. Tha
 
 ### Connecting over the Internet
 
-If you need to connect over the internet, then the Host Machine will have to _port forward_ their router, so that connections cominng from other computers will be told by the router to connect to that machine. This is not very secure, and is why I stress, _this is for a private server with friends **ONLY**_. Opening up your computer's IP address like this to the world would allow for malicious attacker to connect and hack your computer (password mining, data theft, etc.) I don't really know much about what can happen but I do know it's bad so be cautious!
+If you need to connect over the internet, then the Host Machine will have to _port forward_ their router, so that connections coming from other computers will be told by the router to connect to that machine. This is not very secure, and is why I stress, _this is for a private server with friends **ONLY**_. Opening up your computer's IP address like this to the world would allow for malicious attacker to connect and hack your computer (password mining, data theft, etc.) I don't really know much about what can happen but I do know it's bad so be cautious!
 
 Before you start with the Port Forwarding, you're also going to want to set up a static IP for the machine hosting the server. Essentially, you're locking down your computer's IP address while connected to this local network. You can checkout [this guide for Windows](https://portforward.com/networking/static-ip-windows-10.htm) for Windows, or [this one for Mac](http://www.macinstruct.com/node/550). If you're on Linux, I trust you can google. In my case, for Windows, I also had to set my DNS resolvers manually, and since you're at it, I recommend switching to [CloudFlare's `1.1.1.1` DNS](https://www.cloudflare.com/learning/dns/what-is-1.1.1.1/)!
 
@@ -151,7 +151,7 @@ Wireless LAN adapter Wi-Fi:
   ...
 ```
 
-This is heavily dependent on what type of router you have so instead of overcomplicating it, I'll just link to [this guide](https://portforward.com/router.htm) which walks you through Port Forwarding for a bunch of different routers. In our case, since Minecraft Servers are connected on port `25565`, that is the one we're going to want to forward to the host machine.
+This is heavily dependent on what type of router you have so instead of over-complicating it, I'll just link to [this guide](https://portforward.com/router.htm) which walks you through Port Forwarding for a bunch of different routers. In our case, since Minecraft Servers are connected on port `25565`, that is the one we're going to want to forward to the host machine.
 
 That should be it! Now to all your friends need to do is connect to the host machine's router's IP address and you're good to go! To find that out, [simply check out this link](http://lmgtfy.com/?q=What+is+my+IP%3F).
 
