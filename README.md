@@ -1,3 +1,9 @@
+### This repository has been archived
+
+Future notes, and edits can be found directly in the `leander.xyz` repository, or at https://leander.xyz/notes
+
+---
+
 # Programming Notes
 
 I seriously don't remember anything unless I write it down. This repository helps with that! 😎😎 These are all notes I've taken while learning some concept, sometimes from readings/blogs, mostly from online courses. If you see anything that could be improved [submit an issue](https://github.com/leeandher/programming-notes/issues), and I'll try to fix it up.
